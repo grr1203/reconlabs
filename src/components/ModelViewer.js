@@ -1,5 +1,4 @@
 import View3D from "@egjs/view3d";
-import src from "../assets/model/Chair.glb";
 import { useEffect, useRef, useState } from "react";
 import style from "../assets/css/ModelViewer.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,14 +8,15 @@ import viewerGuide from "../assets/img/modal.png";
 function ModelViewer() {
   const viewerRef = useRef();
   const [modal, setModal] = useState(false);
+  const models = ["Chair", "Cube", "Mixer", "ToyCar"];
+  const [model] = useState(models[Math.floor(Math.random() * models.length)]);
 
   useEffect(() => {
-    console.log(viewerRef);
     new View3D(viewerRef.current, {
-      src,
-      envmap: "../assets/model/geislingen_an_der_steige_4k.hdr",
+      src: `/model/${model}.glb`,
+      envmap: "/model/geislingen_an_der_steige_4k.hdr",
     });
-  }, [viewerRef]);
+  }, [viewerRef, model]);
 
   const openModal = () => {
     setModal(true);
@@ -37,10 +37,10 @@ function ModelViewer() {
           <canvas></canvas>
         </div>
         <div className={style.optionBox}>
-          <label for="option1">Show Dimensions:</label>
+          <label htmlFor="option1">Show Dimensions:</label>
           <input id="option1" type="checkbox" />
           <br />
-          <label for="option2">HDR Lighting:</label>
+          <label htmlFor="option2">HDR Lighting:</label>
           <input id="option2" type="checkbox" />
         </div>
         <button className={style.copyButton}>코드 복사하기</button>
