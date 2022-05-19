@@ -25,6 +25,10 @@ function ModelViewer() {
     setModal(false);
   };
 
+  const handleCopyURL = () => {
+    navigator.clipboard.writeText(window.location.href);
+  };
+
   return (
     <div className={style.viewerContainer}>
       <div className={style.viewer}>
@@ -43,7 +47,9 @@ function ModelViewer() {
           <label htmlFor="option2">HDR Lighting:</label>
           <input id="option2" type="checkbox" />
         </div>
-        <button className={style.copyButton}>코드 복사하기</button>
+        <button className={style.copyButton} onClick={handleCopyURL}>
+          코드 복사하기
+        </button>
       </div>
       <ViewerGuideModal open={modal} handleClose={closeModal} />
     </div>
