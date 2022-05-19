@@ -1,1 +1,13 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.header {
+  margin: 25px 0;
+}
+
+.header__logo {
+  width: 150px;
+}
