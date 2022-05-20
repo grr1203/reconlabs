@@ -1,5 +1,6 @@
 import ModelViewer from "./components/ModelViewer";
 import QR from "./components/QR";
+import Footer from "./components/Footer";
 import "./assets/css/App.css";
 import logo from "./assets/img/logo.png";
 
@@ -11,6 +12,7 @@ function App() {
       </div>
       <ModelViewer />
       <QR />
+      <Footer />
     </div>
   );
 }
