@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+@mixin basicButton {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.4);
+  background-color: $blue;
+  color: $white;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}

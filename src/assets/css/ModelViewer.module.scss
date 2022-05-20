@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./mixins.scss";
 
 .viewerContainer {
   background-image: url("../img/bg.png");
@@ -22,7 +23,7 @@
       position: absolute;
       top: -28px;
       right: 8px;
-      color: rgba(#000, 0.5);
+      color: rgba($black, 0.5);
       font-size: 20px;
       cursor: pointer;
     }
@@ -38,30 +39,19 @@
       left: 15px;
       font-size: 1.2rem;
       font-weight: 800;
-      color: rgba(#000, 0.4);
+      color: rgba($black, 0.4);
       background-color: rgba($white, 0.8);
       padding: 10px 20px;
       border-radius: 5px;
       box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.2);
-
-      input {
-        border: 1px solid blue;
-      }
     }
 
     .copyButton {
+      @include basicButton;
       position: absolute;
       bottom: -80px;
       left: 50%;
       transform: translateX(-50%);
-      border: none;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.4);
-      background-color: $blue;
-      color: $white;
-      padding: 10px;
-      font-size: 0.95rem;
-      cursor: pointer;
     }
   }
 }
