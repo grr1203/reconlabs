@@ -8,17 +8,27 @@
 
 .qrContainer {
   @include align;
+  margin-top: 1em;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 25px 0;
+  }
 
   .explain1 {
     @include align;
-    margin: 25px 0 50px 0;
+    margin: 25px 0 40px 0;
   }
   .explain2 {
     margin-bottom: 30px;
   }
   .explain3 {
     @include align;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+  }
+  span {
+    padding: 5px;
   }
   .downloadButton {
     @include basicButton;

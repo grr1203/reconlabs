@@ -57,6 +57,10 @@ function ModelViewer() {
 }
 
 function ViewerGuideModal({ open, handleClose }) {
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "auto";
+  }, [open]);
+
   return (
     <div
       className={`${style.modal} ${open ? style.visible : ""}`}
